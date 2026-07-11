@@ -1,5 +1,5 @@
 calendar_name: "MDCU Deadlines"
-base_url: [https://newspatiparn.github.io/mdcu-deadline-cal/](https://newspatiparn.github.io/mdcu-deadline-cal/)
+base_url: https://newspatiparn.github.io/mdcu-deadline-cal/
 timezone: "Asia/Bangkok"
 uid_domain: "mdcu-deadline-cal"               # UID suffix; never change after launch
 alarm_lead_hours: 24                          # VALARM lead time
