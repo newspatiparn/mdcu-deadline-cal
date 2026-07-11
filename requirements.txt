@@ -1,0 +1,4 @@
+PyYAML
+icalendar
+qrcode[pil]
+pytest

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{CAL_NAME}}</title>
+<style>
+  :root { --accent: #b4256b; --accent-dark: #8f1d55; --ink: #1f2430; --muted: #5c6470; --line: #e6e8ee; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Noto Sans Thai', 'Sarabun', system-ui, sans-serif;
+    color: var(--ink);
+    background: #fafafa;
+    line-height: 1.65;
+  }
+  main { max-width: 40rem; margin: 0 auto; padding: 1.25rem 1.25rem 3rem; }
+  header { padding: 1.5rem 0 0.5rem; }
+  h1 { font-size: 1.7rem; margin: 0 0 0.5rem; color: var(--accent-dark); }
+  .pitch { font-size: 1.05rem; margin: 0; color: var(--muted); }
+  h2 { font-size: 1.15rem; margin: 2.2rem 0 0.8rem; }
+  .btn {
+    display: block;
+    text-align: center;
+    padding: 0.95rem 1rem;
+    margin: 0.6rem 0;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .btn:active { background: var(--accent-dark); }
+  details {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    padding: 0.7rem 1rem;
+    margin: 0.6rem 0;
+  }
+  summary { cursor: pointer; font-weight: 600; }
+  details ol, details ul { margin: 0.6rem 0 0.3rem; padding-left: 1.4rem; }
+  .raw-url { font-size: 0.9rem; color: var(--muted); margin: 1rem 0 0; }
+  .raw-url code {
+    display: block;
+    margin-top: 0.3rem;
+    padding: 0.6rem 0.8rem;
+    background: #fff;
+    border: 1px dashed var(--line);
+    border-radius: 0.5rem;
+    word-break: break-all;
+    user-select: all;
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+  table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 0.75rem; overflow: hidden; }
+  th, td { padding: 0.6rem 0.7rem; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.95rem; vertical-align: top; }
+  th { background: #f3f4f8; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  .qr { text-align: center; }
+  .qr img { width: 220px; max-width: 60vw; height: auto; border: 1px solid var(--line); border-radius: 0.75rem; background: #fff; padding: 0.5rem; }
+  .note {
+    background: #fff;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.8rem 1rem;
+    margin: 0.8rem 0;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
+  footer a { color: var(--accent-dark); }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>{{CAL_NAME}}</h1>
+  <p class="pitch">กดติดตามครั้งเดียว ทุกกำหนดส่งเด้งเข้าปฏิทินมือถือ พร้อมแจ้งเตือนอัตโนมัติ — ไม่ต้องโหลดแอปเพิ่ม</p>
+</header>
+
+<section>
+  <h2>📌 กดติดตามปฏิทิน</h2>
+  <a class="btn" href="{{WEBCAL_URL}}">iPhone / iPad / Mac — กดแล้วยืนยัน "สมัครรับ"</a>
+  <a class="btn" href="{{GOOGLE_ADD_URL}}">Google Calendar (Android) — กดแล้วเลือก "เพิ่ม"</a>
+  <details>
+    <summary>Outlook — ขั้นตอนเพิ่มเอง</summary>
+    <ol>
+      <li>เปิด Outlook Calendar แล้วกด <b>Add calendar</b></li>
+      <li>เลือก <b>Subscribe from web</b></li>
+      <li>วางลิงก์ด้านล่างนี้ ตั้งชื่อปฏิทิน แล้วกด <b>Import</b></li>
+    </ol>
+  </details>
+  <p class="raw-url">หรือคัดลอกลิงก์ไปวางเองในแอปปฏิทินใดก็ได้ (แตะที่ลิงก์เพื่อเลือกทั้งบรรทัด):
+    <code>{{ICS_URL}}</code>
+  </p>
+</section>
+
+<section>
+  <h2>❓ วิธีติดตาม ทีละขั้น</h2>
+  <details>
+    <summary>iPhone / iPad / Mac</summary>
+    <ul>
+      <li>แตะปุ่ม <b>iPhone / iPad / Mac</b> ด้านบน</li>
+      <li>เครื่องจะเด้งหน้าต่าง "สมัครรับปฏิทิน" — กด <b>สมัครรับ / Subscribe</b></li>
+      <li>เสร็จแล้ว — กำหนดส่งใหม่ ๆ จะตามมาเองในแอปปฏิทินเดิม</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Android / Google Calendar</summary>
+    <ul>
+      <li>แตะปุ่ม <b>Google Calendar (Android)</b> ด้านบน แล้วล็อกอินบัญชี Google (ถ้ายังไม่ได้ล็อกอิน)</li>
+      <li>กด <b>เพิ่ม / Add</b> ในหน้าที่เปิดขึ้นมา</li>
+      <li>เปิดแอป Google Calendar ในมือถือ — ปฏิทินใหม่จะโผล่ในรายการปฏิทินอัตโนมัติ</li>
+    </ul>
+  </details>
+  <details>
+    <summary>Outlook</summary>
+    <ul>
+      <li>Add calendar → <b>Subscribe from web</b></li>
+      <li>วางลิงก์จากช่อง "คัดลอกลิงก์" ด้านบน แล้วกด Import</li>
+    </ul>
+  </details>
+</section>
+
+<section>
+  <h2>🗓️ กำหนดส่งที่กำลังจะถึง</h2>
+  <table>
+    <thead><tr><th>วันที่</th><th>เวลา</th><th>รายการ</th></tr></thead>
+    <tbody>
+{{UPCOMING_ROWS}}
+    </tbody>
+  </table>
+</section>
+
+<section class="qr">
+  <h2>📲 แชร์ให้เพื่อน</h2>
+  <p>ให้เพื่อนสแกน QR นี้เพื่อเปิดหน้านี้แล้วกดติดตามเอง</p>
+  <img src="qr.png" alt="QR code เปิดหน้าติดตามปฏิทิน" width="220" height="220">
+</section>
+
+<section>
+  <h2>ℹ️ ควรรู้ก่อนใช้</h2>
+  <p class="note">⏱ Google Calendar รีเฟรชปฏิทินแบบติดตามประมาณ<b>วันละครั้ง</b> — เหมาะกับ deadline ที่รู้ล่วงหน้า ไม่เหมาะกับประกาศด่วนรายชั่วโมง และแนะนำให้ตั้ง <b>default reminder</b> ของปฏิทินตัวเองด้วย เพราะบางแอปไม่รับการแจ้งเตือนที่ฝังมากับ feed</p>
+  <p class="note">🔒 ปฏิทินนี้เป็น feed อ่านอย่างเดียว ผู้จัดทำไม่เห็นและไม่เก็บข้อมูลว่าใครติดตาม ไม่มีบัญชี ไม่มีการล็อกอิน ไม่มี analytics</p>
+</section>
+
+<footer>
+  <p>อัปเดตล่าสุด: {{UPDATED_AT}} · <a href="{{REPO_URL}}">ดูโค้ด / แจ้งแก้ไขบน GitHub</a></p>
+</footer>
+
+</main>
+</body>
+</html>
